@@ -27,6 +27,7 @@ export const cardPlus = (
     id,
     title,
     content,
+    progress,
   });
 
   return { ...cardListState, addData };
