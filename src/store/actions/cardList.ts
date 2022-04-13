@@ -8,6 +8,7 @@ export interface PlusAndEditParams {
   id: string;
   title: string;
   content: string;
+  progress: 'To do' | 'In progress' | 'Done';
 }
 
 const deleteCard = ({ id }: DeleteParams) => {
@@ -17,17 +18,17 @@ const deleteCard = ({ id }: DeleteParams) => {
   };
 };
 
-const plusCard = ({ id, title, content }: PlusAndEditParams) => {
+const plusCard = ({ id, title, content, progress }: PlusAndEditParams) => {
   return {
     type: PLUS_CARD,
-    payload: { id, title, content },
+    payload: { id, title, content, progress },
   };
 };
 
-const editCard = ({ id, title, content }: PlusAndEditParams) => {
+const editCard = ({ id, title, content, progress }: PlusAndEditParams) => {
   return {
     type: EDIT_CARD,
-    payload: { id, title, content },
+    payload: { id, title, content, progress },
   };
 };
 
