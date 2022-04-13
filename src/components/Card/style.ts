@@ -10,7 +10,8 @@ export const Container = styled.div`
   background-color: white;
   margin-bottom: 15px;
   border-radius: 8px;
-  padding: 17px 17px 38px 15px;
+  padding: 17px 12px 38px 15px;
+  position: relative;
 
   /* content style */
   & div {
