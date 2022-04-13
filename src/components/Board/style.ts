@@ -11,12 +11,6 @@ export const Container = styled.div`
   padding: 23px 19px 45px 19px;
   margin: auto;
   border-radius: 8px;
-
-  /* & > span {
-    margin-bottom: 10px;
-    & > div {
-    }
-  } */
 `;
 
 export const Header = styled.div`
