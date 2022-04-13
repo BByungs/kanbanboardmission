@@ -4,7 +4,7 @@ import Empty from 'src/components/empty';
 import Card from 'src/components/Card';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
-import AddCard from '../AddCard';
+import SubmitCard from '../SubmitCard';
 
 interface BoardProps {
   progress: string;
@@ -23,7 +23,9 @@ const Board = (props: BoardProps): JSX.Element => {
         <h1>{props.progress}</h1>
         <PlusIcon icon={faPlus} onClick={handleAdd} />
       </Header>
-      {addOpen && <AddCard setAddOpen={setAddOpen} progress={props.progress} />}
+      {addOpen && (
+        <SubmitCard setAddOpen={setAddOpen} progress={props.progress} />
+      )}
       {!props.list.length ? (
         <Empty />
       ) : (
