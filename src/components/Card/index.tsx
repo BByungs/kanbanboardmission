@@ -1,8 +1,8 @@
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import { CardType } from 'src/types/CardType';
-import { Container, Header, EllipsisIcon } from './style';
+import { Container, Header, EllipsisIcon, OutSideOfDropdown } from './style';
 import { useDispatch, useSelector } from 'react-redux';
-import { useState } from 'react';
+import React, { useState } from 'react';
 import Dropdown from '../Dropdown';
 
 interface CardProps {
@@ -18,18 +18,18 @@ const Card = (props: CardProps): JSX.Element => {
     setDropdownOpen((prev) => !prev);
   };
 
-  const test = (e: React.MouseEvent<HTMLElement>) => {
-    const target = e.target as HTMLDivElement;
-    console.log(target.className);
-  };
-
   return (
     <Container>
       <Header>
         <h1>{props.card.title}</h1>
         <EllipsisIcon icon={faEllipsis} onClick={handleEllipsis} />
+        {dropdownOpen && (
+          <React.Fragment>
+            <Dropdown setDropdownOpen={setDropdownOpen} />
+            <OutSideOfDropdown onClick={() => setDropdownOpen(false)} />
+          </React.Fragment>
+        )}
       </Header>
-      {dropdownOpen && <Dropdown setDropdownOpen={setDropdownOpen} />}
       <div>{props.card.content}</div>
     </Container>
   );

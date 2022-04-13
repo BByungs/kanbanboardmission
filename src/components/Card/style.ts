@@ -40,3 +40,12 @@ export const EllipsisIcon = styled(FontAwesomeIcon)`
   color: black;
   font-size: 12px;
 `;
+
+export const OutSideOfDropdown = styled.div`
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 10;
+`;
