@@ -1,7 +1,4 @@
-import {
-  DeleteParams,
-  PlusAndEditParams,
-} from './../../store/actions/cardList';
+import { PlusAndEditParams } from './../../store/actions/cardList';
 import {
   DELETE_CARD,
   EDIT_CARD,
@@ -9,7 +6,7 @@ import {
 } from 'src/store/actions/actionType';
 export interface CardDeleteAction {
   type: typeof DELETE_CARD;
-  payload: DeleteParams;
+  payload: Pick<PlusAndEditParams, 'id' | 'progress'>;
 }
 
 export interface CardPlusAction {
