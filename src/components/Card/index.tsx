@@ -1,7 +1,6 @@
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import { CardType } from 'src/types/CardType';
 import { Container, Header, EllipsisIcon, OutSideOfDropdown } from './style';
-import { useDispatch, useSelector } from 'react-redux';
 import React, { useState } from 'react';
 import Dropdown from '../Dropdown';
 import SubmitCard from '../SubmitCard';
@@ -13,8 +12,6 @@ interface CardProps {
 const Card = (props: CardProps): JSX.Element => {
   const [dropdownOpen, setDropdownOpen] = useState<boolean>(false);
   const [editOpen, setEditOpen] = useState<boolean>(false);
-
-  // const dispatch = useDispatch();
 
   const handleEllipsis = () => {
     setDropdownOpen((prev) => !prev);
@@ -34,6 +31,7 @@ const Card = (props: CardProps): JSX.Element => {
                 <Dropdown
                   setDropdownOpen={setDropdownOpen}
                   setEditOpen={setEditOpen}
+                  card={props.card}
                 />
                 <OutSideOfDropdown onClick={() => setDropdownOpen(false)} />
               </React.Fragment>
