@@ -15,7 +15,7 @@ type cardListActionTypes =
 const cardList = (state = CARDLIST, action: cardListActionTypes) => {
   switch (action.type) {
     case DELETE_CARD:
-      return cardDelete(state, action.payload.id);
+      return cardDelete(state, action.payload);
     case EDIT_CARD:
       return cardEdit(state, action.payload);
     case PLUS_CARD:

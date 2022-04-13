@@ -2,7 +2,10 @@ import produce from 'immer';
 import { PlusAndEditParams } from 'src/store/actions/cardList';
 import { CardListType } from 'src/types/CardListType';
 
-export const cardDelete = (cardListState: CardListType, id: string) => {
+export const cardDelete = (
+  cardListState: CardListType,
+  { id, progress }: Pick<PlusAndEditParams, 'id' | 'progress'>,
+) => {
   Object.keys(cardListState).forEach((idx: string) => {
     const cards = cardListState[idx as keyof CardListType];
     if (cards.length) {
