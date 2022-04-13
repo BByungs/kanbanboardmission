@@ -34,7 +34,6 @@ const AddCard = (props: AddCardProps) => {
   };
 
   const onSubmit: SubmitHandler<Inputs> = (data) => {
-    console.log(data.content, data.title);
     dispatch({
       type: PLUS_CARD,
       payload: {
@@ -44,6 +43,7 @@ const AddCard = (props: AddCardProps) => {
         progress: prgoressReturn(props.progress),
       },
     });
+    props.setAddOpen(false);
   };
 
   const handleCancel = () => {

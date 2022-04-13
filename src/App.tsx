@@ -5,7 +5,6 @@ import { StoreState } from './types/store';
 
 const App = (): JSX.Element => {
   const cardListState = useSelector((state: StoreState) => state.cardList);
-  // console.log(cardListState);
 
   return (
     <Container>
