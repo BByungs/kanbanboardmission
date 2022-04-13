@@ -6,16 +6,14 @@ export const cardDelete = (
   cardListState: CardListType,
   { id, progress }: Pick<PlusAndEditParams, 'id' | 'progress'>,
 ) => {
-  Object.keys(cardListState).forEach((idx: string) => {
-    const cards = cardListState[idx as keyof CardListType];
-    if (cards.length) {
-      cards.forEach((card) => {
-        if (card.id === id) console.log(card);
-      });
-    } else return;
+  return produce(cardListState, (draft) => {
+    const key = progress as keyof CardListType;
+    draft[key].forEach((card, idx) => {
+      if (card.id === id) {
+        draft[key].splice(idx, 1);
+      }
+    });
   });
-
-  return cardListState;
 };
 
 export const cardEdit = (
