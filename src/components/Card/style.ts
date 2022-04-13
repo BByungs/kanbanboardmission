@@ -12,6 +12,7 @@ export const Container = styled.div`
   border-radius: 8px;
   padding: 17px 12px 38px 15px;
   position: relative;
+  cursor: move;
 
   /* content style */
   & div {
@@ -48,4 +49,5 @@ export const OutSideOfDropdown = styled.div`
   left: 0;
   bottom: 0;
   z-index: 10;
+  cursor: default;
 `;
