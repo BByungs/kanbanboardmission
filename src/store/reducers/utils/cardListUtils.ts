@@ -4,9 +4,11 @@ import { CardListType } from 'src/types/CardListType';
 export const cardDelete = (cardListState: CardListType, id: string) => {
   Object.keys(cardListState).forEach((idx: string) => {
     const cards = cardListState[idx as keyof CardListType];
-    cards.forEach((card) => {
-      if (card.id === id) console.log(card);
-    });
+    if (cards.length) {
+      cards.forEach((card) => {
+        if (card.id === id) console.log(card);
+      });
+    } else return;
   });
 
   return cardListState;
