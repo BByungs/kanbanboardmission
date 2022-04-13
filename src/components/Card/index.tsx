@@ -1,24 +1,25 @@
-import { useState } from 'react';
 import { faEllipsis } from '@fortawesome/free-solid-svg-icons';
 import { CardType } from 'src/types/CardType';
 import { Container, Header, EllipsisIcon } from './style';
+import { useDispatch } from 'react-redux';
+import { DELETE_CARD } from 'src/store/actions/actionType';
 
 interface CardProps {
   card: CardType;
 }
 
 const Card = (props: CardProps): JSX.Element => {
-  const [editOpen, setEditOpen] = useState<boolean>(false);
+  const dispatch = useDispatch();
 
-  const handleEdit = () => {
-    setEditOpen(true);
+  const test = (id: string) => {
+    dispatch({ type: DELETE_CARD, payload: { id } });
   };
 
   return (
     <Container>
       <Header>
         <h1>{props.card.title}</h1>
-        <EllipsisIcon icon={faEllipsis} onClick={handleEdit} />
+        <EllipsisIcon icon={faEllipsis} onClick={() => test(props.card.id)} />
       </Header>
       <div>{props.card.content}</div>
     </Container>
