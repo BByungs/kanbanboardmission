@@ -1,3 +1,4 @@
+import produce from 'immer';
 import { PlusAndEditParams } from 'src/store/actions/cardList';
 import { CardListType } from 'src/types/CardListType';
 
@@ -17,7 +18,16 @@ export const cardDelete = (cardListState: CardListType, id: string) => {
 export const cardEdit = (
   cardListState: CardListType,
   { id, title, content, progress }: PlusAndEditParams,
-) => {};
+) => {
+  return produce(cardListState, (draft) => {
+    const key = progress as keyof CardListType;
+    const card = draft[key].find((card) => card.id === id);
+    if (card) {
+      card.content = content;
+      card.title = title;
+    }
+  });
+};
 
 export const cardPlus = (
   cardListState: CardListType,
@@ -30,5 +40,5 @@ export const cardPlus = (
     progress,
   });
 
-  return { ...cardListState, addData };
+  return { addData, ...cardListState };
 };
