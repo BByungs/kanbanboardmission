@@ -1,9 +1,5 @@
 import { DELETE_CARD, EDIT_CARD, PLUS_CARD } from './actionType';
 
-export interface DeleteParams {
-  id: string;
-}
-
 export interface PlusAndEditParams {
   id: string;
   title: string;
@@ -11,10 +7,13 @@ export interface PlusAndEditParams {
   progress: 'To do' | 'In progress' | 'Done';
 }
 
-const deleteCard = ({ id }: DeleteParams) => {
+const deleteCard = ({
+  id,
+  progress,
+}: Pick<PlusAndEditParams, 'id' | 'progress'>) => {
   return {
     type: DELETE_CARD,
-    payload: { id },
+    payload: { id, progress },
   };
 };
 
