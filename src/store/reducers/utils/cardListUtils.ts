@@ -36,12 +36,13 @@ export const cardPlus = (
   cardListState: CardListType,
   { id, title, content, progress }: PlusAndEditParams,
 ) => {
-  const addData = cardListState[progress as keyof CardListType].unshift({
-    id,
-    title,
-    content,
-    progress,
+  return produce(cardListState, (draft) => {
+    const key = progress as keyof CardListType;
+    draft[key].unshift({
+      id,
+      title,
+      content,
+      progress,
+    });
   });
-
-  return { addData, ...cardListState };
 };
