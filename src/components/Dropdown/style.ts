@@ -10,6 +10,8 @@ export const Container = styled.div`
   right: 10px;
   border-radius: 5px;
   border: 1px solid gray;
+  background-color: white;
+
   & > div {
     font-size: 12px;
     padding: 5px 7px 4px 7px;
