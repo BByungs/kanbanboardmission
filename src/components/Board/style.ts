@@ -28,3 +28,5 @@ export const Header = styled.div`
 export const PlusIcon = styled(FontAwesomeIcon)`
   cursor: pointer;
 `;
+
+export const CardListContainer = styled.div``;
