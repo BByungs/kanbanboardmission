@@ -17,7 +17,6 @@ const App = (): JSX.Element => {
 
 const Container = styled.div`
   display: flex;
-  margin: 0 auto;
   max-width: 1040px;
   padding: 20px;
 `;
