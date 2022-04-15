@@ -1,6 +1,5 @@
 import { Container, PlusIcon, Header } from './style';
 import { CardType } from 'src/types/CardType';
-import Empty from 'src/components/empty';
 import Card from 'src/components/Card';
 import { faPlus } from '@fortawesome/free-solid-svg-icons';
 import { useState } from 'react';
@@ -16,21 +15,18 @@ const Board = (props: BoardProps): JSX.Element => {
   const handleAdd = () => {
     setAddOpen((prev) => !prev);
   };
-
   return (
-    <Container>
-      <Header>
+    <Container className="container" draggable="true">
+      <Header id="header">
         <h1>{props.progress}</h1>
         <PlusIcon icon={faPlus} onClick={handleAdd} />
       </Header>
       {addOpen && (
         <SubmitCard setAddOpen={setAddOpen} progress={props.progress} />
       )}
-      {!props.list.length ? (
-        <Empty />
-      ) : (
-        props.list.map((card) => <Card key={card.id} card={card} />)
-      )}
+      {props.list.map((card) => (
+        <Card key={card.id} card={card} />
+      ))}
     </Container>
   );
 };
