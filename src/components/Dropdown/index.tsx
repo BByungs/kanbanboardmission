@@ -9,7 +9,7 @@ interface DropdownProps {
   card: CardType;
 }
 
-const Dropdown = (props: DropdownProps) => {
+const Dropdown = (props: DropdownProps): JSX.Element => {
   const dispatch = useDispatch();
   const handleEdit = () => {
     props.setEditOpen((prev) => !prev);

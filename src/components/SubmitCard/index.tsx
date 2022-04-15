@@ -18,7 +18,7 @@ interface SubmitCardProps {
   edit?: boolean;
 }
 
-const SubmitCard = (props: SubmitCardProps) => {
+const SubmitCard = (props: SubmitCardProps): JSX.Element => {
   const dispatch = useDispatch();
   const {
     register,
