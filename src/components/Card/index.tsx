@@ -21,12 +21,14 @@ const Card = (props: CardProps): JSX.Element => {
   };
 
   const progressReturn = (x: number) => {
-    if (x >= 0 && x <= 773) {
+    if (x >= 0 && x <= 335) {
       return 'todo';
-    } else if (x > 773 && x <= 1107) {
+    } else if (x > 370 && x <= 665) {
       return 'inProgress';
-    } else if (x > 1107) {
+    } else if (x >= 703 && x <= 997) {
       return 'done';
+    } else {
+      return props.card.progress;
     }
   };
 
