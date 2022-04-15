@@ -1,3 +1,3 @@
-import { deleteCard, plusCard, editCard } from './cardList';
+import { deleteCard, plusCard, editCard, moveCard } from './cardList';
 
-export { deleteCard, plusCard, editCard };
+export { deleteCard, plusCard, editCard, moveCard };

@@ -1,10 +1,17 @@
-import { DELETE_CARD, EDIT_CARD, PLUS_CARD } from './actionType';
+import { CardType } from 'src/types/CardType';
+import { DELETE_CARD, EDIT_CARD, MOVE_CARD, PLUS_CARD } from './actionType';
 
 export interface PlusAndEditParams {
   id: string;
   title: string;
   content: string;
   progress: 'To do' | 'In progress' | 'Done';
+}
+
+export interface MoveCardParams
+  extends Pick<PlusAndEditParams, 'id' | 'progress'> {
+  card: CardType;
+  currentPrgoress: 'To do' | 'In progress' | 'Done';
 }
 
 const deleteCard = ({
@@ -31,4 +38,11 @@ const editCard = ({ id, title, content, progress }: PlusAndEditParams) => {
   };
 };
 
-export { deleteCard, plusCard, editCard };
+const moveCard = ({ id, progress, card, currentPrgoress }: MoveCardParams) => {
+  return {
+    type: MOVE_CARD,
+    payload: { id, progress, card, currentPrgoress },
+  };
+};
+
+export { deleteCard, plusCard, editCard, moveCard };
