@@ -1,20 +1,14 @@
-import { PlusAndEditParams } from './../../store/actions/cardList';
-import {
-  DELETE_CARD,
-  EDIT_CARD,
-  PLUS_CARD,
-} from 'src/store/actions/actionType';
-export interface CardDeleteAction {
-  type: typeof DELETE_CARD;
-  payload: Pick<PlusAndEditParams, 'id' | 'progress'>;
+import { CardType } from '../CardType';
+
+export interface PlusAndEditParams {
+  id: string;
+  title: string;
+  content: string;
+  progress: 'To do' | 'In progress' | 'Done';
 }
 
-export interface CardPlusAction {
-  type: typeof PLUS_CARD;
-  payload: PlusAndEditParams;
-}
-
-export interface CardEditAction {
-  type: typeof EDIT_CARD;
-  payload: PlusAndEditParams;
+export interface MoveCardParams
+  extends Pick<PlusAndEditParams, 'id' | 'progress'> {
+  card: CardType;
+  currentPrgoress: 'To do' | 'In progress' | 'Done';
 }

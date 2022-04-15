@@ -1,7 +1,6 @@
-import { MoveCardParams } from './../../actions/cardList';
 import produce from 'immer';
-import { PlusAndEditParams } from 'src/store/actions/cardList';
 import { CardListType } from 'src/types/CardListType';
+import { MoveCardParams, PlusAndEditParams } from 'src/types/store';
 
 export const cardDelete = (
   cardListState: CardListType,

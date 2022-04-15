@@ -1,18 +1,5 @@
-import { CardType } from 'src/types/CardType';
+import { MoveCardParams, PlusAndEditParams } from 'src/types/store';
 import { DELETE_CARD, EDIT_CARD, MOVE_CARD, PLUS_CARD } from './actionType';
-
-export interface PlusAndEditParams {
-  id: string;
-  title: string;
-  content: string;
-  progress: 'To do' | 'In progress' | 'Done';
-}
-
-export interface MoveCardParams
-  extends Pick<PlusAndEditParams, 'id' | 'progress'> {
-  card: CardType;
-  currentPrgoress: 'To do' | 'In progress' | 'Done';
-}
 
 const deleteCard = ({
   id,

@@ -1,8 +1,4 @@
 import { StoreState } from './stateType';
-import {
-  CardDeleteAction,
-  CardEditAction,
-  CardPlusAction,
-} from './cardListTypes';
+import { PlusAndEditParams, MoveCardParams } from './cardListTypes';
 
-export type { CardDeleteAction, CardEditAction, CardPlusAction, StoreState };
+export type { PlusAndEditParams, MoveCardParams, StoreState };
