@@ -16,7 +16,7 @@ const Board = (props: BoardProps): JSX.Element => {
     setAddOpen((prev) => !prev);
   };
   return (
-    <Container className="container" draggable="true">
+    <Container>
       <Header id="header">
         <h1>{props.progress}</h1>
         <PlusIcon icon={faPlus} onClick={handleAdd} />
