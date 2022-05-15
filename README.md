@@ -1,4 +1,4 @@
-# Caredoc Mission
+# kanbanboard mission
 
 ### 실행 방법
 
@@ -15,4 +15,3 @@ $ yarn start // 실행 해주시면 됩니다.
 - Card 추가 , 삭제 , 수정 가능하게 구현했습니다.
 - Card를 옮길 원하는 곳으로 드래그를 이용해 옮길 수 있습니다.
 
-봐주셔서 감사합니다!
